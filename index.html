@@ -4,15 +4,243 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Erry Kostala</title>
+    <meta name="description" content="The personal website of Erry Kostala.">
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #243238;
+        background: #f3f5f2;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        padding: 32px 20px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(100%, 960px);
+        min-height: calc(100vh - 64px);
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid #e1e7e2;
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0 18px 55px rgb(35 54 46 / 8%);
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 7%;
+        border-bottom: 1px solid #edf0ed;
+      }
+
+      .wordmark {
+        color: #243b36;
+        font-size: 1rem;
+        font-weight: 750;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      nav a {
+        color: #5c6b66;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        color: #286c5a;
+      }
+
+      .content {
+        width: min(100% - 48px, 720px);
+        margin: 0 auto;
+        padding: clamp(64px, 11vw, 112px) 0 72px;
+      }
+
+      .intro {
+        padding-bottom: 48px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: #397765;
+        font-size: 0.75rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 600px;
+        margin: 0;
+        color: #20332e;
+        font-size: clamp(2.8rem, 8vw, 5rem);
+        font-weight: 750;
+        letter-spacing: -0.075em;
+        line-height: 1.02;
+      }
+
+      .intro-copy {
+        max-width: 500px;
+        margin: 22px 0 0;
+        color: #62716c;
+        font-size: 1.1rem;
+        line-height: 1.75;
+      }
+
+      .section-heading {
+        margin: 0 0 18px;
+        color: #243b36;
+        font-size: 1.15rem;
+        letter-spacing: -0.025em;
+      }
+
+      .links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .link-card {
+        display: flex;
+        min-height: 150px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 22px;
+        border: 1px solid #e4eae5;
+        border-radius: 14px;
+        background: #f8faf8;
+        text-decoration: none;
+        transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+      }
+
+      .link-card:hover,
+      .link-card:focus-visible {
+        transform: translateY(-2px);
+        border-color: #a9c6b8;
+        background: #f2f7f3;
+      }
+
+      .link-card strong {
+        color: #263b35;
+        font-size: 1.2rem;
+        letter-spacing: -0.03em;
+      }
+
+      .link-card span {
+        color: #62716c;
+        font-size: 0.92rem;
+      }
+
+      .site-footer {
+        padding: 20px 7%;
+        border-top: 1px solid #edf0ed;
+        color: #78847f;
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 520px) {
+        body {
+          padding: 12px;
+        }
+
+        .page {
+          min-height: calc(100vh - 24px);
+          border-radius: 14px;
+        }
+
+        .site-header {
+          padding: 20px 6%;
+        }
+
+        nav {
+          gap: 14px;
+        }
+
+        nav a {
+          font-size: 0.82rem;
+        }
+
+        .content {
+          width: min(100% - 40px, 720px);
+          padding-top: 72px;
+        }
+
+        .links {
+          grid-template-columns: 1fr;
+        }
+
+        .link-card {
+          min-height: 126px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <h1>Erry Kostala</h1>
-      <p>Welcome to my personal website.</p>
-      <ul>
-        <li><a href="https://docs.google.com/document/d/1iYpHXiQBhXNQgPrnHTAMSG50Zf1IcnhJRHb5sHi0rNg/edit?usp=sharing">My CV</a></li>
-        <li><a href="https://dev.to/errietta/">My blog</a></li>
-      </ul>
-    </main>
+    <div class="page">
+      <header class="site-header">
+        <a class="wordmark" href="/">Erry Kostala</a>
+        <nav aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="https://docs.google.com/document/d/1iYpHXiQBhXNQgPrnHTAMSG50Zf1IcnhJRHb5sHi0rNg/edit?usp=sharing">CV</a>
+          <a href="https://dev.to/errietta/">Blog</a>
+        </nav>
+      </header>
+      <main class="content">
+        <section class="intro" aria-labelledby="intro-heading">
+          <p class="eyebrow">Personal website</p>
+          <h1 id="intro-heading">Hello, I’m Erry.</h1>
+          <p class="intro-copy">Welcome to my corner of the internet. Explore my CV or catch up on what I’ve been writing.</p>
+        </section>
+        <section aria-labelledby="explore-heading">
+          <h2 class="section-heading" id="explore-heading">Explore</h2>
+          <div class="links">
+            <a class="link-card" href="https://docs.google.com/document/d/1iYpHXiQBhXNQgPrnHTAMSG50Zf1IcnhJRHb5sHi0rNg/edit?usp=sharing">
+              <strong>My CV</strong>
+              <span>Experience, skills, and more&nbsp;↗</span>
+            </a>
+            <a class="link-card" href="https://dev.to/errietta/">
+              <strong>My blog</strong>
+              <span>Notes and things I’ve learned&nbsp;↗</span>
+            </a>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">© Erry Kostala</footer>
+    </div>
   </body>
 </html>
